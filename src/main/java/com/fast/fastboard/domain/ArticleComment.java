@@ -20,9 +20,8 @@ import java.util.Objects;
         @Index(columnList = "createdAt"),
         @Index(columnList = "createdBy")
 })
-@EntityListeners(AuditingEntityListener.class)
 @Entity
-public class ArticleComment {
+public class ArticleComment extends AuditingFileds {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -32,19 +31,6 @@ public class ArticleComment {
     @Setter
     @Column(nullable = false, length = 500)
     private String content;
-
-    @CreatedDate
-    @Column(nullable = false)
-    private LocalDateTime createdAt;//생성일시
-    @CreatedBy
-    @Column(nullable = false, length = 100)
-    private String createdBy;//생성자
-    @LastModifiedDate
-    @Column(nullable = false)
-    private LocalDateTime ModifiedAt;//수정일시
-    @LastModifiedBy
-    @Column(nullable = false, length = 100)
-    private String modifiedBy;//수정자
 
     protected ArticleComment() {}
 
