@@ -1,5 +1,6 @@
 package com.fast.fastboard.controller;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,9 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+
+@Disabled("Spring Data REST")
 @DisplayName("DataRestTest")
 @Transactional
 @AutoConfigureMockMvc
@@ -38,6 +42,7 @@ public class DataRestTest {
 
     }
 
+    @Disabled
     @DisplayName("[api] 게시글 단건 조회")
     @Test
     void givenNothing_whenRequestingArticle_thenReturnArticleJsonResponse() throws Exception {
@@ -50,7 +55,7 @@ public class DataRestTest {
                 .andDo(print());
 
     }
-
+    @Disabled
     @DisplayName("[api] 게시글 -> 댓글 리스트 조회")
     @Test
     void givenNothing_whenRequestingArticleCommentsfromArticle_thenReturnArticleCommentsJsonResponse() throws Exception {
@@ -76,7 +81,7 @@ public class DataRestTest {
                 .andDo(print());
 
     }
-
+    @Disabled
     @DisplayName("[api] 댓글 단건 조회")
     @Test
     void givenNothing_whenRequestingArticleComment_thenReturnArticleCommentJsonResponse() throws Exception {

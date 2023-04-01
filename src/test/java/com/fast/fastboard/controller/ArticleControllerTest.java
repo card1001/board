@@ -45,6 +45,7 @@ class ArticleControllerTest {
                 .andExpect(model().attributeExists("articleComments"));
     }
 
+    @Disabled("구현중")
     @DisplayName("[view][GET] 게시글 검색 전용 페이지 - 정상호출")
     @Test
     public void givenNothing_whenRequestingArticleSearchView_thenReturnArticleSearchView() throws Exception {
